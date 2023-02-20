@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
         menuModelList = new ArrayList<>();
         List<MenuModel> foodList = new ArrayList<MenuModel>();
+
+        //making new menuModel
         MenuModel pasta = new MenuModel("Pasta","Bucatini Pasta, Ditalini Pasta",R.drawable.pasta_image);
         MenuModel burger = new MenuModel("Burgers","Cheese Burger, Kubie Burger",R.drawable.burger_image);
         MenuModel salad = new MenuModel("Salad","Caesar Salad, Tossed Salad",R.drawable.salad_image);

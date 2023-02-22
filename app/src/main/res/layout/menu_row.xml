@@ -17,8 +17,8 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/food_type_imageview"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
+            android:layout_width="154dp"
+            android:layout_height="154dp"
             android:adjustViewBounds="true"
             android:scaleType="fitStart"
             app:layout_constraintTop_toTopOf="parent"
@@ -54,6 +54,20 @@
             app:layout_constraintStart_toEndOf="@+id/food_type_imageview"
             app:layout_constraintTop_toBottomOf="@+id/food_type_textview"
             tools:text="Ditalini Pasta, Fusilli Pasta " />
+
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/food_info_textview"
+            app:layout_constraintStart_toStartOf="@+id/food_info_textview"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:scaleX=".75"
+            android:scaleY=".75"
+            android:transformPivotX="100dp"
+            android:transformPivotY="12dp"
+            android:isIndicator="true"
+            android:max="5" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

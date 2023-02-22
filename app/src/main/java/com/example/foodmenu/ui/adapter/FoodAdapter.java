@@ -1,6 +1,8 @@
 package com.example.foodmenu.ui.adapter;
 
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,17 +12,22 @@ import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.foodmenu.OnItemClickListener;
 import com.example.foodmenu.R;
 import com.example.foodmenu.model.MenuModel;
+import com.example.foodmenu.ui.activity.DetailsActivity;
+import com.example.foodmenu.utilities.Const;
 
 import java.util.List;
 
 public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder> {
 
     private List<MenuModel> menuModelList;
+    private OnItemClickListener onItemClickListener;
 
-    public FoodAdapter(List<MenuModel> menuModelList) {
+    public FoodAdapter(List<MenuModel> menuModelList, OnItemClickListener onItemClickListener) {
         this.menuModelList = menuModelList;
+        this.onItemClickListener = onItemClickListener;
     }
 
 
@@ -43,6 +50,17 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
         holder.textViewFoodInfo.setText(menuModel.getFoodInfo());
         holder.imageViewFoodType.setImageResource(menuModel.getFoodImage());
 
+        holder.itemView.setOnClickListener(view -> {
+            onItemClickListener.onItemClick(menuModel);
+//            Context context = view.getContext();
+//            Intent intent = new Intent(context, DetailsActivity.class);
+//            intent.putExtra(Const.FOOD_IMAGE_KEY,menuModel.getFoodImage());
+//            intent.putExtra(Const.FOOD_NAME_KEY,menuModel.getFoodName());
+//            intent.putExtra(Const.FOOD_COST_KEY,menuModel.getFoodCost());
+//            intent.putExtra(Const.FOOD_INGREDIENTS_KEY,menuModel.getFoodIngredients());
+//            context.startActivity(intent);
+        });
+
     }
 
     @Override
@@ -60,6 +78,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
             imageViewFoodType = itemView.findViewById(R.id.food_type_imageview);
             textViewFoodType = itemView.findViewById(R.id.food_type_textview);
             textViewFoodInfo = itemView.findViewById(R.id.food_info_textview);
+
         }
     }
 }

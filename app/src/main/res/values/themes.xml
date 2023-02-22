@@ -12,5 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="fontFamily">@font/tirotelugu</item>
+        <item name="android:font">@font/tirotelugu</item>
     </style>
 </resources>
